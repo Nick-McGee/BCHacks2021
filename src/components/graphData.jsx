@@ -1,13 +1,11 @@
 import React from "react";
 import { JSCharting } from 'jscharting-react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import { FaAngleUp, FaAngleDown, FaMale } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import NewsCol from './newscol';
-import { GraphDataArray } from '../graph';
 
   const newsArray = [
       'Article 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec.',
@@ -22,7 +20,7 @@ import { GraphDataArray } from '../graph';
   };
 
 
-const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentimentcount}) => {
+const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentimentcount, graphdatarray}) => {
     return (
         <Container>
         <hr></hr>
@@ -40,7 +38,7 @@ const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentim
               </Col>
             </Row>
             <Row>
-              <div style={chartStyle}><JSCharting options={GraphDataArray} /></div>
+              <div style={chartStyle}><JSCharting options={graphdatarray} /></div>
             </Row>
           </Col>
           <NewsCol newsArray={newsArray}/>
