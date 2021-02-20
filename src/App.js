@@ -6,8 +6,18 @@ import './App.css';
 import WsbImage from './images/wsb.jpeg'
 import 'bootstrap/dist/css/bootstrap.css';
 import { GraphDataArray } from './graph';
+import { NewsArray } from './news';
 
-
+const stockArray= {
+  stockClass: 'good',
+  ticker: 'GME',
+  companyname: 'Gamestop Inc',
+  highvalue: '53.37 USD',
+  lowvalue: '38.60 USD',
+  sentimentcount: '7,234',
+  graphdatarray: GraphDataArray,
+  newsarray: NewsArray
+}
 
 function App() {
   return (
@@ -17,7 +27,7 @@ function App() {
         parag="Using sentimental analysis, we analyze what stocks the users on r/wallstreetbets are talking about"
         imgsrc={WsbImage}
       />
-      <GraphData stockClass='good' ticker='GME' companyname='Gamestop Inc' highvalue='53.37 USD' lowvalue='38.60 USD' sentimentcount='7,234' graphdatarray={GraphDataArray}/>
+      <GraphData stockClass={stockArray.stockClass} ticker={stockArray.ticker} companyname={stockArray.companyname} highvalue={stockArray.highvalue} lowvalue={stockArray.lowvalue} sentimentcount={stockArray.sentimentcount} graphdatarray={stockArray.graphdatarray} newsarray={stockArray.newsarray}/>
     </div>
   );
 }
