@@ -7,12 +7,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import NewsCol from './newscol';
 
-  const newsArray = [
-      'Article 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec.',
-      'Article 2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec.',
-      'Article 3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec.'
-  ]
-
   const chartStyle = {
     width: '90%',
       height: '400px',
@@ -20,7 +14,7 @@ import NewsCol from './newscol';
   };
 
 
-const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentimentcount, graphdatarray}) => {
+const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentimentcount, graphdatarray, newsarray}) => {
     return (
         <Container>
         <hr></hr>
@@ -41,7 +35,7 @@ const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentim
               <div style={chartStyle}><JSCharting options={graphdatarray} /></div>
             </Row>
           </Col>
-          <NewsCol newsArray={newsArray}/>
+          <NewsCol newsArray={newsarray}/>
         </Row>
       </Container>
     );
