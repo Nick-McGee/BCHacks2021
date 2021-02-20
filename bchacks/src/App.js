@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { JSCharting } from 'jscharting-react'
+import { FaAngleUp, FaAngleDown, FaMale } from 'react-icons/fa';
 import logo from './img/cover1.jpg'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
@@ -9,7 +10,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 
-// Chart styling
+// Chart Data
 const chartConfig = {
   debug: false,
   type: 'candlestick',
@@ -97,17 +98,35 @@ const chartConfig = {
 };
 
 
+// Chart style
 const chartStyle = {
   width: '90%',
 	height: '400px',
 	margin: '0px auto'
 };
 
-
 // Jumbotron styling
 const jumboStyle = {
   backgroundColor: 'white'
 };
+
+// Text styling
+const center = {
+  marginTop: '8%'
+}
+
+const nameLineup = {
+  paddingLeft: '2%',
+  fontSize: '24px'
+}
+
+const statsLineup = {
+  paddingTop: '1.5%'
+}
+
+const newsLineup = {
+  paddingTop: '1%'
+}
 
 
 function App() {
@@ -116,7 +135,7 @@ function App() {
       <Jumbotron style={jumboStyle}>
         <Container>
           <Row>
-            <Col sm={4}>
+            <Col sm={4} style={center}>
               <h1>Wall Street Bets Sentiment Analysis</h1>
               <p>Using sentiment analysis, we analyze what stocks the users on r/wallstreetbets are talking about.</p>
             </Col>
@@ -129,25 +148,30 @@ function App() {
       </Jumbotron>
 
       <Container>
+        <h1>Top 5 Stocks on Wall Street Bets</h1>
+      </Container>
+      
+      <Container>
         <hr></hr>
         <Row>
           <Col sm={8}>
             <Row>
               <Col sm={5}>
+                {/* class must be generated as good/bad by sentiment analysis */}
                 <h1 class="good" id="ticker">GME</h1>
-                <p>Gamestop Inc</p>
+                <p style={nameLineup}>Gamestop Inc</p>
               </Col>
-              <Col sm={5}>
-                <p>Weekly High: <span class="good" id="high-value">53.37 USD</span></p>
-                <p>Weekly Low:  <span class="bad" id="low-value">38.60 USD</span></p>
-                <p>Sentiment Count: <span>7,234</span></p>
+              <Col sm={5} style={statsLineup}>
+                <p><FaAngleUp /> Weekly High: <span class="good" id="high-value">53.37 USD</span></p>
+                <p><FaAngleDown />Weekly Low:  <span class="bad" id="low-value">38.60 USD</span></p>
+                <p><FaMale />Sentiment Count: <span>7,234</span></p>
               </Col>
             </Row>
             <Row>
               <div style={chartStyle}><JSCharting options={chartConfig} /></div>
             </Row>
           </Col>
-          <Col sm={4}>
+          <Col sm={4} style={newsLineup}>
             <h3>News</h3>
             <p><a href="#">Article 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec.</a></p>
             <p><a href="#">Article 2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec.</a></p>
