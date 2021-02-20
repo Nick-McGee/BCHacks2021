@@ -150,7 +150,7 @@ function App() {
       <Container>
         <h1>Top 5 Stocks on Wall Street Bets</h1>
       </Container>
-      
+
       <Container>
         <hr></hr>
         <Row>
@@ -163,8 +163,8 @@ function App() {
               </Col>
               <Col sm={5} style={statsLineup}>
                 <p><FaAngleUp /> Weekly High: <span class="good" id="high-value">53.37 USD</span></p>
-                <p><FaAngleDown />Weekly Low:  <span class="bad" id="low-value">38.60 USD</span></p>
-                <p><FaMale />Sentiment Count: <span>7,234</span></p>
+                <p><FaAngleDown /> Weekly Low:  <span class="bad" id="low-value">38.60 USD</span></p>
+                <p><FaMale /> Sentiment Count: <span>7,234</span></p>
               </Col>
             </Row>
             <Row>
