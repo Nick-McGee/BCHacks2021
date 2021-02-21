@@ -30,15 +30,15 @@ const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentim
     //Use ticker to retrieve the appropriate news
 
     const [news, setNews] = useState([]);
-    if (news.length == 0) GetNews(ticker).then(result => setNews(result));
+    if (news.length === 0) GetNews(ticker).then(result => setNews(result));
     if (news.length > 0) console.log(news[0][0]);
 
     const [minMax, setMaxMin] = useState([]);
-    if(minMax.length == 0) getLowHigh(ticker).then(result => setMaxMin(result));
+    if(minMax.length === 0) getLowHigh(ticker).then(result => setMaxMin(result));
     if(minMax.length > 0) console.log(minMax);
 
     const [name, setName] = useState([]);
-    if(name.length == 0) getCompanyName(ticker).then(result => setName(result));
+    if(name.length === 0) getCompanyName(ticker).then(result => setName(result));
     if(name.length > 0) console.log(name);
 
     return (

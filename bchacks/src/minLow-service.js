@@ -1,7 +1,9 @@
+import cached_fetch from './Api';
+
 export const getLowHigh = (ticker) => {
     var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + ticker + '&apikey=46C5ZW2US27WT7FY'
 
-    return fetch(url)
+    return cached_fetch(url)
         .then(response => {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' + response.status);

@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from './components/header';
 import GraphData from './components/graphData';
 import './App.css';
 import WsbImage from './images/wsb.jpeg';
 import 'bootstrap/dist/css/bootstrap.css';
 import { GraphDataArray } from './graph';
+import { GetNews } from "./news-service";
 
 const stockArray= [
   {  
@@ -21,6 +22,9 @@ const stockArray= [
 
 function App() {
 
+  const [news, setNews] = useState([]);
+  if(news.length === 0) GetNews("GME").then(result => setNews(result));
+  if(news.length > 0) console.log(news);
   return (
     <div className="main">
       <Header

@@ -1,9 +1,11 @@
+import cached_fetch from './Api';
+
 export const GetNews = (ticker) => {
-    var url = 'http://newsapi.org/v2/everything?q=' + ticker + '&from=2021-02-20&to=2021-02-20&sortBy=popularity&apiKey=3f1d72ef8dd9413ab9ab611a9f4768b4'
+    var url = 'http://newsapi.org/v2/everything?q=' + ticker + '&from=2021-02-20&to=2021-02-20&sortBy=popularity&apiKey=d1bb59859c874cd49fd9569c71181c71'
 
     var jsonData = [];
 
-    return fetch(url)
+    return cached_fetch(url)
         .then(response => {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' + response.status);
@@ -17,7 +19,7 @@ export const GetNews = (ticker) => {
             }
             return jsonData;
         })
-        .catch(function(err) {
+        .catch(err => {
             console.log('Fetch Error :-S', err);
         });
 }
