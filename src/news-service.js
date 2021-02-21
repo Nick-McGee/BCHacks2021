@@ -13,7 +13,8 @@ export const GetNews = (ticker) => {
             // Examine the text in the response
             response.json().then(function(data) {
                 for (let i = 0; i < 3; i++) {
-                    jsonData[i] = [data.articles[i].title, data.articles[i].url]
+                    let article = "article"+i;
+                    jsonData[i] = [data[article].title, data[article].url];
                 }
             });
         })

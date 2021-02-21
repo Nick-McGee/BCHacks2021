@@ -3,24 +3,21 @@ export const GetNews = (ticker) => {
 
     var jsonData = [];
 
-    fetch(url)
-        .then(function(response) {
+    return fetch(url)
+        .then(response => {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' + response.status);
                 return;
             }
-
-            // Examine the text in the response
-            response.json().then(function(data) {
-                for (let i = 0; i < 3; i++) {
-                    jsonData[i] = [data.articles[i].title, data.articles[i].url]
-                }
-            });
+            return response.json()
+        })
+        .then(json => {
+            for (let i = 0; i < 3; i++) {
+                jsonData[i] = [json.articles[i].title, json.articles[i].url]
+            }
+            return jsonData;
         })
         .catch(function(err) {
             console.log('Fetch Error :-S', err);
         });
-
-    
-    return jsonData;
 }
