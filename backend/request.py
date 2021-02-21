@@ -134,7 +134,7 @@ def convertTime(string):
 		return month + "/" + day + "/" + year
 	
 
-print(getData('MSFT', 'TIME_SERIES_DAILY', '5min'))
+#print(getData('MSFT', 'TIME_SERIES_DAILY', '5min'))
 
 
 	
