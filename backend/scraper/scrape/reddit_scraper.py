@@ -16,7 +16,7 @@ def scrape(lastScanned):
                 comArr.append(Comment(comment['body'], comment['created']))
             outputData.append(Post(post['title'], post['text'], comArr, post['created']))
 
-        return outputData
+        return outputData, True
     else:
         print('path not existed')
         data = ''
@@ -52,7 +52,7 @@ def scrape(lastScanned):
         with open('reddit.json', 'w+') as outfile:
             json.dump(jsonOut, outfile)
 
-        return outputData
+        return outputData, False
 
 
 class Post:
