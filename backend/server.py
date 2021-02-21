@@ -39,10 +39,8 @@ def get_cache(path: str, check_ttl: bool):
 
 def set_cache(url, path, resp):
     with open(path, 'w') as f:
-        f.write(
-            json.dumps(
-                {"url": url, "ttl": int(time.time()) + 7200, "response": resp.decode('utf-8')}
-            )
+        json.dump(
+            {"url": url, "ttl": int(time.time()) + 7200, "response": resp.decode('utf-8')}, f
         )
 
 

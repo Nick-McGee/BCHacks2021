@@ -1,0 +1,13 @@
+{
+  "subreddits":  [
+    "wallstreetbets"
+  ],
+  "credentials":
+  {
+      "client_id": "EpM-tm-knvhoNQ",
+      "client_secret":"Rl8lhuns5hJGE5fv1wpxrPn6Xww",
+      "user_agent":"BCHacks Bot",
+      "username":"Rcube_Bot",
+      "password":"m6K3KA3jybH07SRivw#hi*ldH4z8ykBKBc233*NwWVM4h*1$FRr5$rxImzRXOUOwg3JGtS^g1QBiYycLsP8EejKGmR3OHvHDu2T"
+  }
+}

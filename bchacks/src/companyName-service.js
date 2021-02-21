@@ -15,6 +15,6 @@ export const getCompanyName = (ticker) => {
             return(json['ResultSet']['Result'][0]['name']);
         })
         .catch(function(err) {
-            console.log('Fetch Error :-S', err);
+            console.log('Fetch Error (', url, '):', err);
         });
 }
