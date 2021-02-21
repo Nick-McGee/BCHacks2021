@@ -19,7 +19,6 @@ const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentim
 
     const [news, setNews] = useState([]);
     if (news.length == 0) GetNews(ticker).then(result => setNews(result));
-    if(news.length > 0) console.log(news[0][0]);
 
     return (
         <Container>
