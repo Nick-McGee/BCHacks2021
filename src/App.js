@@ -3,10 +3,15 @@ import logo from './logo.svg';
 import Header from './components/header';
 import GraphData from './components/graphData';
 import './App.css';
-import WsbImage from './images/wsb.jpeg'
+import WsbImage from './images/wsb.jpeg';
 import 'bootstrap/dist/css/bootstrap.css';
 import { GraphDataArray } from './graph';
 import { NewsArray } from './news';
+import { GetNews } from './news-service';
+
+const newarray = GetNews('GME');
+
+console.log(newarray[0]);
 
 const stockArray= [
   {  
