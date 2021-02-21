@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { GraphDataArray } from './graph';
 import { NewsArray } from './news';
 
-const stockArray= {
+const stockArray= [
+  {  
   stockClass: 'good',
   ticker: 'GME',
   companyname: 'Gamestop Inc',
@@ -17,7 +18,9 @@ const stockArray= {
   sentimentcount: '7,234',
   graphdatarray: GraphDataArray,
   newsarray: NewsArray
-}
+  }
+]
+
 
 function App() {
   return (
@@ -27,7 +30,8 @@ function App() {
         parag="Using sentimental analysis, we analyze what stocks the users on r/wallstreetbets are talking about"
         imgsrc={WsbImage}
       />
-      <GraphData stockClass={stockArray.stockClass} ticker={stockArray.ticker} companyname={stockArray.companyname} highvalue={stockArray.highvalue} lowvalue={stockArray.lowvalue} sentimentcount={stockArray.sentimentcount} graphdatarray={stockArray.graphdatarray} newsarray={stockArray.newsarray}/>
+      {stockArray.map(stock => <GraphData stockClass={stock.stockClass}  ticker={stock.ticker} companyname={stock.companyname} highvalue={stock.highvalue} lowvalue={stock.lowvalue} sentimentcount={stock.sentimentcount} graphdatarray={stock.graphdatarray} newsarray={stock.newsarray}/>)}
+      
     </div>
   );
 }
