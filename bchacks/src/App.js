@@ -1,13 +1,10 @@
-import React, { useState } from "react";
-import logo from './logo.svg';
+import React from "react";
 import Header from './components/header';
 import GraphData from './components/graphData';
 import './App.css';
 import WsbImage from './images/wsb.jpeg';
 import 'bootstrap/dist/css/bootstrap.css';
 import { GraphDataArray } from './graph';
-import { NewsArray } from './news';
-import { GetNews } from './news-service';
 
 const stockArray= [
   {  
@@ -17,26 +14,21 @@ const stockArray= [
   highvalue: '53.37 USD',
   lowvalue: '38.60 USD',
   sentimentcount: '7,234',
-  graphdatarray: GraphDataArray,
-  newsarray: NewsArray
+  graphdatarray: GraphDataArray
   }
 ]
 
 
 function App() {
 
-  const [news, setNews] = useState([]);
-  if (news.length == 0) GetNews('GME').then(result => setNews(result));
-  if(news.length > 0) console.log(news[0][0]);
-
   return (
     <div className="main">
       <Header
-        header={news.length > 0 ? news[0][0] : "Wall Street Bets Sentimental Analysis"}
+        header="Wall Street Bets Sentimental Analysis" 
         parag="Using sentimental analysis, we analyze what stocks the users on r/wallstreetbets are talking about"
         imgsrc={WsbImage}
       />
-      {stockArray.map(stock => <GraphData stockClass={stock.stockClass}  ticker={stock.ticker} companyname={stock.companyname} highvalue={stock.highvalue} lowvalue={stock.lowvalue} sentimentcount={stock.sentimentcount} graphdatarray={stock.graphdatarray} newsarray={stock.newsarray}/>)}
+      {stockArray.map(stock => <GraphData stockClass={stock.stockClass}  ticker={stock.ticker} companyname={stock.companyname} highvalue={stock.highvalue} lowvalue={stock.lowvalue} sentimentcount={stock.sentimentcount} graphdatarray={stock.graphdatarray}/>)}
       
     </div>
   );
