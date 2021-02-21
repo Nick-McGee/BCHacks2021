@@ -75,11 +75,11 @@ def getData(company, function, interval):
 		header = "Monthly Time Series"
 		useHour = false
 	
-	openSet = []
-	highSet = []
-	lowSet = []
-	closeSet = []
-	timeSet = []
+	#openSet = []
+	#highSet = []
+	#lowSet = []
+	#closeSet = []
+	#timeSet = []
 	candleStick = []
 
 	
@@ -90,19 +90,10 @@ def getData(company, function, interval):
 	
 	for key in jsonResponse[header]:
 		if key != lastUpdate[company]:
-			#print(key, ":", jsonResponse['Time Series (1min)'][key])
 			openVal = jsonResponse[header][key][open]
-			openSet.append(openVal)
-			
 			highVal = jsonResponse[header][key][high]
-			highSet.append(highVal)
-			
 			lowVal = jsonResponse[header][key][low]
-			lowSet.append(lowVal)
-			
 			closeVal = jsonResponse[header][key][close]
-			closeSet.append(closeVal)
-			
 			timeSet.append(convertTime(key))
 			arr = [convertTime(key), openVal, highVal, lowVal, closeVal]
 			#print(arr)
