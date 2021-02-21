@@ -6,7 +6,9 @@ const NewsCol = ({newsArray}) => {
     return (
         <Col sm={4}>
             <h3>News</h3>
-            {newsArray.map(news => (<p><a href="#">{news}</a></p>))}
+            {
+                newsArray.map(news => (<p><a href="#">{news}</a></p>))
+            }
       </Col>
     );
 }
