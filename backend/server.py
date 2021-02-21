@@ -18,13 +18,29 @@ def error(msg):
 
 @app.route('/top5')
 def top_5_stox():
-    return json.dumps([
-        {'GME': {'sentiment': 0.67, 'frequency': 1242}},
-        {'AMC': {'sentiment': 0.75, 'frequency': 756}},
-        {'EXPR': {'sentiment': 0.89, 'frequency': 647}},
-        {'NOK': {'sentiment': 0.72, 'frequency': 423}},
-        {'KOSS': {'sentiment': 0.82, 'frequency': 211}}
-    ])
+    data = None
+    with open('scraper/results.json', 'r') as f:
+        data = json.load(f)
+
+    temp = []
+    for key in data:
+        temp.append([key, {'sentiment': data[key]['sentiment'], 'frequency': data[key]['frequency']}])
+
+    sorted(temp, key=lambda x: x[1]['frequency'])
+    temp = temp[:5]
+
+    ans = []
+    for x in temp:
+        ans.append({x[0]: x[1]})
+
+    return json.dumps(ans)
+    # return json.dumps([
+    #     {'GME': {'sentiment': 0.67, 'frequency': 1242}},
+    #     {'AMC': {'sentiment': 0.75, 'frequency': 756}},
+    #     {'EXPR': {'sentiment': 0.89, 'frequency': 647}},
+    #     {'NOK': {'sentiment': 0.72, 'frequency': 423}},
+    #     {'KOSS': {'sentiment': 0.82, 'frequency': 211}}
+    # ])
 
 @app.route('/getChartData', methods=['POST'])
 def getChartData():

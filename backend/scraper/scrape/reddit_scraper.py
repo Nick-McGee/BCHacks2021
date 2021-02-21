@@ -57,6 +57,7 @@ def scrape(lastScanned):
 
 class Post:
     id = 1
+
     def __init__(self, title, text, comments, created):
         # assign id for use later
         self.id = Post.id

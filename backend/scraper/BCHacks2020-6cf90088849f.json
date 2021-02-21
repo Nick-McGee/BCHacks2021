@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bchacks2020-305501",
+  "private_key_id": "6cf90088849ff5fa96ed338ca00c5888d8eccfa8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCjWYVQi2aqsN/N\nKgtwMAwUqmmGxAMq/rYqL3gj9Ds0uthobJig0jSi2W2GZEQzppt/HPZdQj30QYpR\nc2ri7x4GoNCAea78aniUPyIhvpRbEqNfo5YEoyU0jv3PBfl6rEpnZKJB6COQL0OE\ny+I5KwWyVLz7J6Jt621YNr9KnOO360kbowu5V1h455zqQxps3iDxtvIeXraGmntj\naP/I5RVpECGQChKPjgvsSkVw4qsY23By9aVNe3IoqQ+V9hO4DkuMJkiqw6PjmNQg\nPGcbP0NK710TVsqcMAj+0cfqlhV5vvrQ4jhHGC6KWS1PCnMH0bbgOIBHkFMmhIdx\nOmCfheiJAgMBAAECggEAOvMclGOqamEocx8AP71nLrINITBtwD9puDGnVrpV/4KK\nhKzkK+2QR1DWINDgeA9hQG9QTXmRaCua4igX48vNdzDj7el8B+XYnA9onurrGS7R\nvLsJcaT60UvlNqf+T5ILy+JaWBSReQBFipAVlPH8vU2tYan9CVQUAujHAgM6fu2b\nt3JW0A4rgohFK5LX0ztOMi4Jm4fwM+7RiBX8zNL9kV5aHUa+ardoDgDDUGVBu9oS\nifD7+LEEGa1P3p07Ez7XoaWYLcntI79E71Jah/hV7QmeHPvAiBh4JV0XDVauA4ah\nd86KJbq1HW5SQriDuLTMxa6bvuXqdbIYXRxTssQmPQKBgQDP60H1e8d4Z3PYxc0l\npkE8h4ktjObK10vzuN9jLxqmo+ALmXJGeDvlC9IAzrikSA7A1z6KLKQ4OV4tL3sM\n/DBzz92W/rW4ClDE8cZ9RksYP/gt3Maf4RmgvlMMoXzyAi6EFnsRoaPzlZG7wgnY\nYcbmX4J8PgNDrK+yLEx3e+YIrwKBgQDJH8ZHPJwUJV7xoz4vrfnSs4qx26wd/xc5\nigFvdKJNuzhAs2CFpKGJvUsmY6jqbwnnFNpArjQDMJ9DTFQbN/npLbe9ccxRQIyq\nafJQ5SXlIEs+FDK9I4doaoW4LKUGZDFttPrg2Y1Ent0d3pX16iyRzfgUzF3BYmx6\nROOvHD6ARwKBgQC/8snO7roFD0Tk8B9nTahWUC41bio3QzHsTFV3BKqPAyU4sC3O\nnvt0hkgW1MGjcJ6mK1CiUXo+KcAm6Pmp0DyO/mztFDMBOAy+9RIw3y8+sPfWp0Z7\nnV2Ch5K2S3PFHHyDFxoA+gAZRZDoDMf4CrSMQ8p8Fuf+lzMQw1LI0ApbIwKBgQDH\nqQeJiJ3ZUhAjCc+ePbQYe6xgTJddX/OKZ3ptTvgg+o8pi+lyQrEqsAR+o8j4kire\ngFD6jPWNhSNWB9wm+TbbSUtygho3P0Flm6+2pwUrpReNFTgZk7/E5JrC728UHTsE\nkfnMZaxcRulz0ZhFfKeqRzLUUt1wMWlHKERvfjZ92QKBgGdQrMc7ZxVNoHtGElV5\n5s+M3DtWAxFK6ZJNQ5EEmTx0rGjkhbfteshMUdqIRJ+p7GH0QpR84m7CCjkDHozw\nt1UxNoIsSdKmEs1ka2m91xE5QSw7OudKvhqK9MCrwRuUhkGj2QF+6PHGYCzz5lWv\nkA/Dhv6EO46PvKgI8I/txOGX\n-----END PRIVATE KEY-----\n",
+  "client_email": "redditanalysis@bchacks2020-305501.iam.gserviceaccount.com",
+  "client_id": "113748911199971268672",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/redditanalysis%40bchacks2020-305501.iam.gserviceaccount.com"
+}

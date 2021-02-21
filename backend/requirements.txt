@@ -3,3 +3,5 @@ flask-cors
 praw
 requests~=2.25.1
 nltk
+google-cloud-language
+ratelimit

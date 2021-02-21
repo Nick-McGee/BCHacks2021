@@ -27,13 +27,34 @@ def get_stocks() -> set[str]:
     return set(stock_symbols)
 
 
+def save(results):
+    with open('results.json', 'w') as f:
+        json.dump(results, f)
+
+
 # load stocks
 stocks = get_stocks()
 
 # load scraped reddit posts
 posts, cached = scrape(get_last_scanned())
+print(len(posts))
 if not cached:
     set_last_scanned()
 
 # analyze the text
-analysis = analyzer.analyze(posts, stocks)
+frequency_analysis = analyzer.analyze(posts, stocks)
+
+sentiments = analyzer.sentiment_analysis(posts, stocks)
+
+
+ans = {}
+for ticker in sentiments:
+    ans[ticker] = {'sentiment': sentiments[ticker], 'frequency': None}
+
+for ticker in ans:
+    if ticker in frequency_analysis:
+        ans[ticker]['frequency'] = frequency_analysis[ticker]
+    else:
+        del ans[ticker]
+
+save(ans)
