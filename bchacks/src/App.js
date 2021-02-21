@@ -4,18 +4,14 @@ import GraphData from './components/graphData';
 import './App.css';
 import WsbImage from './images/wsb.jpeg';
 import 'bootstrap/dist/css/bootstrap.css';
-import { GraphDataArray } from './graph';
 import { GetNews } from "./news-service";
 
 const stockArray= [
   {  
   stockClass: 'good',
   ticker: 'GME',
-  companyname: 'Gamestop Inc',
-  highvalue: '53.37 USD',
-  lowvalue: '38.60 USD',
   sentimentcount: '7,234',
-  graphdatarray: GraphDataArray
+  graphdatarray: 0
   }
 ]
 
@@ -32,7 +28,7 @@ function App() {
         parag="Using sentimental analysis, we analyze what stocks the users on r/wallstreetbets are talking about"
         imgsrc={WsbImage}
       />
-      {stockArray.map(stock => <GraphData stockClass={stock.stockClass}  ticker={stock.ticker} companyname={stock.companyname} highvalue={stock.highvalue} lowvalue={stock.lowvalue} sentimentcount={stock.sentimentcount} graphdatarray={stock.graphdatarray}/>)}
+      {stockArray.map(stock => <GraphData stockClass={stock.stockClass}  ticker={stock.ticker} sentimentcount={stock.sentimentcount} graphdatarray={stock.graphdatarray}/>)}
       
     </div>
   );

@@ -6,6 +6,7 @@ from flask import Flask, request, make_response
 from flask_cors import CORS
 import json
 import hashlib
+import requestChartData2
 
 app = Flask(__name__)
 CORS(app)
@@ -24,6 +25,15 @@ def top_5_stox():
         {'NOK': {'sentiment': 0.72, 'frequency': 423}},
         {'KOSS': {'sentiment': 0.82, 'frequency': 211}}
     ])
+
+@app.route('/getChartData', methods=['POST'])
+def getChartData():
+    data = request.data.decode('utf-8')
+
+    chartData = requestChartData2.getData(data, 'TIME_SERIES_DAILY', '5min')
+    print(jsonfiy(chartData))
+
+    return jsonify(chartData)
 
 
 def get_cache(path: str, check_ttl: bool):
