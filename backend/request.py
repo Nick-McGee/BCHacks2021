@@ -12,6 +12,7 @@ close = "4. close"
 volume = "5. volume"
 base = 'https://www.alphavantage.co/query?'
 lastUpdate = {}
+useHour = False
 
 
 # 'TIME_SERIES_INTRADAY_EXTENDED', do not use, up to 2gb
@@ -63,12 +64,16 @@ def getData(company, function, interval):
 			header = "Time Series (30min)"
 		elif interval == "60min":
 			header = "Time Series (60min)"
+		useHour = true
 	elif function == functions[1]:	
 		header = "Time Series (Daily)"
+		useHour = false
 	elif function == functions[2]:
 		header = "Weekly Time Series"
+		useHour = false
 	elif function == functions[2]:
 		header = "Monthly Time Series"
+		useHour = false
 	
 	openSet = []
 	highSet = []
@@ -123,8 +128,10 @@ def convertTime(string):
 	day = string[8:10]
 	time = string[10:]
 	
-	#return month + "/" + day + "/" + year
-	return month + "/" + day + "/" + year + " " + time
+	if useHour:
+		return month + "/" + day + "/" + year + " " + time
+	else:
+		return month + "/" + day + "/" + year
 	
 
 print(getData('MSFT', 'TIME_SERIES_DAILY', '5min'))
