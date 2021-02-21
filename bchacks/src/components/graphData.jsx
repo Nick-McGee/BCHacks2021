@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { JSCharting } from 'jscharting-react';
 import Container from 'react-bootstrap/Container';
 import { FaAngleUp, FaAngleDown, FaMale } from 'react-icons/fa';
@@ -14,9 +14,13 @@ import { GetNews } from '../news-service';
       margin: '0px auto'
   };
 
-const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentimentcount, graphdatarray, newsarray}) => {
+const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentimentcount, graphdatarray}) => {
     //Use ticker to retrieve the appropriate news
-    const newarray = GetNews(ticker);
+
+    const [news, setNews] = useState([]);
+    if (news.length == 0) GetNews(ticker).then(result => setNews(result));
+    if(news.length > 0) console.log(news[0][0]);
+
     return (
         <Container>
         <hr></hr>
@@ -37,7 +41,7 @@ const GraphData = ({stockClass, ticker, companyname, highvalue, lowvalue, sentim
               <div style={chartStyle}><JSCharting options={graphdatarray} /></div>
             </Row>
           </Col>
-          <NewsCol newsarray={newsarray}/>
+          <NewsCol news={news}/>
         </Row>
       </Container>
     );
